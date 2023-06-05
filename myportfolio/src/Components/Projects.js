@@ -1,4 +1,7 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+// import { useLayoutEffect, useState } from "react";
+// import classnames from "classnames";
+// import "./Projects.css"
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
@@ -8,6 +11,34 @@ import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
+
+  // const images = [0, 1, 2, 3, 4]
+
+  // const [visibleImagesMap, setVisibleImagesMap] = useState(
+  //   images.reduce((map, image) => {
+  //       map[image] = false;
+  //       return map;
+  //     }, {})
+  //   );
+
+  //   useLayoutEffect(() => {
+  //     const handleScroll = () => {
+  //       const scrollTop = document.documentElement.scrollTop;
+  //       const viewportHeight = window.innerHeight;
+  
+  //       const newVisibleImagesMap = images.reduce((map, image) => {
+  //           map[image] = scrollTop >= image * viewportHeight;
+  //           return map;
+  //         }, {});
+    
+  //         setVisibleImagesMap(newVisibleImagesMap);
+  //       };
+    
+  //       window.addEventListener("scroll", handleScroll);
+  //       handleScroll();
+    
+  //       return () => window.removeEventListener("scroll", handleScroll);
+  //     }, []);
 
   const projects = [
     {
@@ -67,6 +98,20 @@ export const Projects = () => {
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
+                      {/* <div className="app">
+          <div className="sticky">
+            <div className="frame">
+              {images.map((image) => (
+                  <div
+              className={classnames("image", `image_${image}`, {
+                  image_visible: visibleImagesMap[image]
+                })}
+                key={image}
+              />
+            ))}
+          </div>
+        </div>
+      </div> */}
                         {
                           projects.map((project, index) => {
                             return (
@@ -79,12 +124,12 @@ export const Projects = () => {
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
+                    {/* <Tab.Pane eventKey="section">
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
+                    </Tab.Pane> */}
                   </Tab.Content>
                 </Tab.Container>
               </div>}
